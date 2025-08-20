@@ -1,10 +1,11 @@
 import streamlit as st
 from openai import OpenAI
 
-# Initialize client
+HF_TOKEN = st.secrets["HF_TOKEN"]
+
 client = OpenAI(
     base_url="https://router.huggingface.co/v1",
-    api_key='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', # Replace with your actual Hugging Face token
+    api_key=HF_TOKEN,
 )
 
 st.title("Egypt Tour Planner Chatbot")

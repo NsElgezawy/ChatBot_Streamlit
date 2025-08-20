@@ -1,8 +1,7 @@
 import streamlit as st
 from openai import OpenAI
 
-# ---------------- Hugging Face Client ----------------
-HF_TOKEN = "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"  # ⚠️ خلي بالك ده لازم يكون Secret مش في الكود
+HF_TOKEN = st.secrets["HF_TOKEN"]
 
 client = OpenAI(
     base_url="https://router.huggingface.co/v1",
