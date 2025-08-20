@@ -5,7 +5,7 @@ HF_TOKEN = st.secrets["HF_TOKEN"]
 
 client = OpenAI(
     base_url="https://router.huggingface.co/v1",
-    api_key=HF_TOKEN,
+    api_key=st.secrets["HF_TOKEN"],
 )
 
 # ---------------- Streamlit App ----------------
@@ -48,7 +48,7 @@ if prompt:
 
         try:
             completion = client.chat.completions.create(
-                model="openai/gpt-oss-20b:fireworks-ai",  # ⚠️ غير الاسم لو عندك موديل تاني
+                model="HuggingFaceH4/zephyr-7b-beta",  # ⚠️ غير الاسم لو عندك موديل تاني
                 messages=api_messages,
                 max_tokens=500,
                 temperature=0.7,
